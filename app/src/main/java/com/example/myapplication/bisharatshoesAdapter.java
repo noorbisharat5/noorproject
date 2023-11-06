@@ -43,12 +43,13 @@ public class bisharatshoesAdapter {
             return restList.size();
         }
 
-        public static class MyViewHolder extends RecyclerView.ViewHolder{
+        public static class MyViewHolder extends RecyclerView.ViewHolder {
             public BreakIterator tvsize;
             TextView tvName, tvPhone;
+
             public MyViewHolder(@NonNull View itemView) {
                 super(itemView);
-                tvName=itemView.findViewById(R.id.);
+                tvName = itemView.findViewById(R.id.);
                 View tvSize = itemView.findViewById(R.id.);
 
             }
