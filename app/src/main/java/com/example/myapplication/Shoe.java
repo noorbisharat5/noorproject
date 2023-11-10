@@ -1,10 +1,10 @@
 package com.example.myapplication;
 
-public class bisharatshoes {
+public class Shoe {
     private String name;
     private String size;
     private String model;
-    private String address;
+    private String price;
 
     public String getName() {
         return name;
@@ -18,15 +18,15 @@ public class bisharatshoes {
         return model;
     }
 
-    public String getAddress() {
-        return address;
+    public String getPrice() {
+        return price;
     }
 
-    public bisharatshoes(String name, String size, String model, String address) {
+    public Shoe(String name, String size, String model, String address) {
         this.name = name;
         this.size = size;
         this.model = model;
-        this.address = address;
+        this.price = address;
     }
 
     public void setName(String name) {
@@ -42,7 +42,7 @@ public class bisharatshoes {
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        this.price = price;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class bisharatshoes {
                 "name='" + name + '\'' +
                 ", size='" + size + '\'' +
                 ", model='" + model + '\'' +
-                ", address='" + address + '\'' +
+                ", price='" + price + '\'' +
                 '}';
     }
 }

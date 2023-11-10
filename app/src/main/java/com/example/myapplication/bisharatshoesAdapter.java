@@ -9,16 +9,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.BreakIterator;
 import java.util.ArrayList;
 
 public class bisharatshoesAdapter {
     public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.MyViewHolder> {
         Context context;
-        ArrayList<bisharatshoes> restList;
+        ArrayList<Shoe> restList;
         private FirebaseServices fbs;
 
-        public RestaurantAdapter(Context context, ArrayList<bisharatshoes> restList) {
+        public RestaurantAdapter(Context context, ArrayList<Shoe> restList) {
             this.context = context;
             this.restList = restList;
             this.fbs = FirebaseServices.getInstance();
@@ -33,7 +32,7 @@ public class bisharatshoesAdapter {
 
         @Override
         public void onBindViewHolder(@NonNull RestaurantAdapter.MyViewHolder holder, int position) {
-            bisharatshoes rest = restList.get(position);
+            Shoe rest = restList.get(position);
             holder.tvName.setText(rest.getName());
             holder.tvsize.setText(rest.getSize());
         }
@@ -43,9 +42,8 @@ public class bisharatshoesAdapter {
             return restList.size();
         }
 
-        public static class MyViewHolder extends RecyclerView.ViewHolder {
-            public BreakIterator tvsize;
-            TextView tvName, tvPhone;
+        public class MyViewHolder extends RecyclerView.ViewHolder {
+            TextView tvName, tvPhone, tvsize;
 
             public MyViewHolder(@NonNull View itemView) {
                 super(itemView);
