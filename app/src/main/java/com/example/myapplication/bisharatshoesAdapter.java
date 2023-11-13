@@ -31,6 +31,11 @@ public class bisharatshoesAdapter {
         }
 
         @Override
+        public void onBindViewHolder() {
+            onBindViewHolder(null, 0);
+        }
+
+        @Override
         public void onBindViewHolder(@NonNull RestaurantAdapter.MyViewHolder holder, int position) {
             Shoe rest = restList.get(position);
             holder.tvName.setText(rest.getName());
