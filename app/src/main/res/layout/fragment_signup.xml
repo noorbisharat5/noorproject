@@ -10,39 +10,50 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="411dp"
+            android:layout_height="450dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@tools:sample/avatars"
+                tools:src="@drawable/nono" />
+        </LinearLayout>
+
         <EditText
             android:id="@+id/etEmailSignup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="173dp"
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="468dp" />
 
         <EditText
             android:id="@+id/etPasswordSignup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
-            app:layout_constraintStart_toStartOf="@+id/etEmailSignup"
-            app:layout_constraintTop_toBottomOf="@+id/etEmailSignup" />
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="513dp" />
 
         <Button
             android:id="@+id/btnSignupSignup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
             android:backgroundTint="#CDDC39"
             android:text="Sign up"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPasswordSignup" />
+            tools:layout_editor_absoluteX="145dp"
+            tools:layout_editor_absoluteY="579dp" />
 
         <ImageButton
             android:id="@+id/btnBackSignup"
@@ -52,18 +63,6 @@
             android:src="@drawable/arrow_back"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="16dp" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/nono"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

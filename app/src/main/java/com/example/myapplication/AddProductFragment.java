@@ -25,7 +25,7 @@ import com.google.firebase.firestore.DocumentReference;
 public class AddProductFragment extends Fragment {
 
     private FirebaseServices fbs;
-    private EditText etName, etDescription, etprice, etsize;
+    private EditText etName, etDescription, etModel, etSize, etPhone, etAddress;
     private Button btnAdd;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -86,8 +86,8 @@ public class AddProductFragment extends Fragment {
     private void connectComponents() {
         fbs = FirebaseServices.getInstance();
         etName = getView().findViewById(R.id.etNameAddRestaurantFragment);
-        etDescription = getView().findViewById(R.id.etsizeAddRestaurantFragment);
-        etAddress = getView().findViewById(R.id.etAddressAddRestaurantFragment);
+        etDescription = getView().findViewById(R.id.etSizeAddRestaurantFragment);
+        etModel = getView().findViewById(R.id.etModelAddRestaurantFragment);
         etPhone = getView().findViewById(R.id.etPhoneAddRestaurantFragment);
         btnAdd = getView().findViewById(R.id.btnAddAddRestaurantFragment);
 
@@ -109,7 +109,7 @@ public class AddProductFragment extends Fragment {
                 }
 
                 // add data to firestore
-                Restaurant rest = new Restaurant(name, description, address, phone);
+                Shoe rest = new Shoe(name, description, address, phone);
 
                 fbs.getFire().collection("restaurants").add(rest).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override

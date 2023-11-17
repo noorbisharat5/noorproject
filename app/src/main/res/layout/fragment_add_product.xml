@@ -20,13 +20,13 @@
             android:ems="10"
             android:hint="name..."
             android:inputType="text"
-            app:layout_constraintBottom_toTopOf="@+id/etsizeAddRestaurantFragment"
+            app:layout_constraintBottom_toTopOf="@+id/etSizeAddRestaurantFragment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/etsizeAddRestaurantFragment"
+            android:id="@+id/etSizeAddRestaurantFragment"
             android:layout_width="204dp"
             android:layout_height="0dp"
             android:layout_marginBottom="37dp"
@@ -34,12 +34,12 @@
             android:gravity="start|top"
             android:hint="size"
             android:inputType="textMultiLine"
-            app:layout_constraintBottom_toTopOf="@+id/etAddressAddRestaurantFragment"
+            app:layout_constraintBottom_toTopOf="@+id/etModelAddRestaurantFragment"
             app:layout_constraintStart_toStartOf="@+id/etNameAddRestaurantFragment"
             app:layout_constraintTop_toBottomOf="@+id/etNameAddRestaurantFragment" />
 
         <EditText
-            android:id="@+id/etAddressAddRestaurantFragment"
+            android:id="@+id/etModelAddRestaurantFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
@@ -47,8 +47,8 @@
             android:hint="model"
             android:inputType="text|textPostalAddress"
             app:layout_constraintBottom_toTopOf="@+id/etPhoneAddRestaurantFragment"
-            app:layout_constraintStart_toStartOf="@+id/etsizeAddRestaurantFragment"
-            app:layout_constraintTop_toBottomOf="@+id/etsizeAddRestaurantFragment" />
+            app:layout_constraintStart_toStartOf="@+id/etSizeAddRestaurantFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etSizeAddRestaurantFragment" />
 
         <EditText
             android:id="@+id/etPhoneAddRestaurantFragment"
@@ -59,8 +59,8 @@
             android:hint="phone..."
             android:inputType="phone"
             app:layout_constraintBottom_toTopOf="@+id/btnAddAddRestaurantFragment"
-            app:layout_constraintStart_toStartOf="@+id/etAddressAddRestaurantFragment"
-            app:layout_constraintTop_toBottomOf="@+id/etAddressAddRestaurantFragment" />
+            app:layout_constraintStart_toStartOf="@+id/etModelAddRestaurantFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etModelAddRestaurantFragment" />
 
         <Button
             android:id="@+id/btnAddAddRestaurantFragment"
