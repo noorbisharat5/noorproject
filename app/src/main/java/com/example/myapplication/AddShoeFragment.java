@@ -19,10 +19,10 @@ import com.google.firebase.firestore.DocumentReference;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link AddProductFragment#newInstance} factory method to
+ * Use the {@link AddShoeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AddProductFragment extends Fragment {
+public class AddShoeFragment extends Fragment {
 
     private FirebaseServices fbs;
     private EditText etName, etDescription, etModel, etSize, etPhone, etAddress;
@@ -37,7 +37,7 @@ public class AddProductFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public AddProductFragment() {
+    public AddShoeFragment() {
         // Required empty public constructor
     }
 
@@ -50,8 +50,8 @@ public class AddProductFragment extends Fragment {
      * @return A new instance of fragment AddRestaurantFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AddProductFragment newInstance(String param1, String param2) {
-        AddProductFragment fragment = new AddProductFragment();
+    public static AddShoeFragment newInstance(String param1, String param2) {
+        AddShoeFragment fragment = new AddShoeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

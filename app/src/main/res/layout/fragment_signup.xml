@@ -12,9 +12,14 @@
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="411dp"
-            android:layout_height="450dp"
-            android:orientation="horizontal" >
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="18dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/etEmailSignup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -23,7 +28,7 @@
                 android:layout_weight="1"
                 android:scaleType="fitXY"
                 android:src="@tools:sample/avatars"
-                tools:src="@drawable/nono" />
+                app:srcCompat="@drawable/nono"/>
         </LinearLayout>
 
         <EditText
@@ -33,36 +38,45 @@
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="468dp" />
+            app:layout_constraintBottom_toTopOf="@+id/etPasswordSignup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <EditText
             android:id="@+id/etPasswordSignup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="21dp"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="513dp" />
+            app:layout_constraintBottom_toTopOf="@+id/btnSignupSignup"
+            app:layout_constraintStart_toStartOf="@+id/etEmailSignup"
+            app:layout_constraintTop_toBottomOf="@+id/etEmailSignup" />
 
         <Button
             android:id="@+id/btnSignupSignup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginBottom="104dp"
             android:backgroundTint="#CDDC39"
             android:text="Sign up"
-            tools:layout_editor_absoluteX="145dp"
-            tools:layout_editor_absoluteY="579dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/etPasswordSignup"
+            app:layout_constraintTop_toBottomOf="@+id/etPasswordSignup" />
 
         <ImageButton
             android:id="@+id/btnBackSignup"
             android:layout_width="65dp"
             android:layout_height="45dp"
-            android:backgroundTint="#FFFFFF"
-            android:src="@drawable/arrow_back"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="16dp" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#656363"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

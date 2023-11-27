@@ -14,47 +14,43 @@ import java.util.ArrayList;
 public class bisharatshoesAdapter {
     public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.MyViewHolder> {
         Context context;
-        ArrayList<Shoe> restList;
+        ArrayList<Shoe> shoeList;
         private FirebaseServices fbs;
 
         public RestaurantAdapter(Context context, ArrayList<Shoe> restList) {
             this.context = context;
-            this.restList = restList;
+            this.shoeList = restList;
             this.fbs = FirebaseServices.getInstance();
         }
 
         @NonNull
         @Override
-        public RestaurantAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
-            View v= LayoutInflater.from(context).inflate(R.layout._item,parent,false);
-            return  new RestaurantAdapter.MyViewHolder(v);
+        public RestaurantAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View v = LayoutInflater.from(context).inflate(R.layout._item, parent, false);
+            return new RestaurantAdapter.MyViewHolder(v);
         }
-
-        @Override
-        public void onBindViewHolder() {
-            onBindViewHolder(null, 0);
-        }
-
         @Override
         public void onBindViewHolder(@NonNull RestaurantAdapter.MyViewHolder holder, int position) {
-            Shoe rest = restList.get(position);
+            Shoe rest = shoeList.get(position);
             holder.tvName.setText(rest.getName());
-            holder.tvsize.setText(rest.getSize());
+            holder.tvSize.setText(rest.getSize());
         }
 
         @Override
-        public int getItemCount(){
-            return restList.size();
+        public int getItemCount() {
+            return shoeList.size();
         }
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
-            TextView tvName, tvPhone, tvsize;
+            TextView tvName, tvPhone, tvSize;
 
             public MyViewHolder(@NonNull View itemView) {
                 super(itemView);
-                tvName = itemView.findViewById(R.id.);
-                View tvSize = itemView.findViewById(R.id.);
+                tvName = itemView.findViewById(R.id.tvNameProductItem);
+                tvSize = itemView.findViewById(R.id.tvSizeProductItem);
 
             }
+        }
+    }
 }
 
