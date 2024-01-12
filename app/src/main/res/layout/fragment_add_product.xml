@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="249dp"
             android:text="Add"
-            app:iconTint="#000000"
+            app:iconTint="#0C31FF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
