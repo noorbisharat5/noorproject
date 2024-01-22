@@ -26,7 +26,7 @@ public class bisharatshoesAdapter {
         @NonNull
         @Override
         public RestaurantAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View v = LayoutInflater.from(context).inflate(R.layout._item, parent, false);
+            View v = LayoutInflater.from(context).inflate(R.layout.home, parent, false);
             return new RestaurantAdapter.MyViewHolder(v);
         }
         @Override

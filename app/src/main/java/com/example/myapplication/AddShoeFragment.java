@@ -111,15 +111,15 @@ public class AddShoeFragment extends Fragment {
                 // add data to firestore
                 Shoe rest = new Shoe(name, description, address, phone);
 
-                fbs.getFire().collection("restaurants").add(rest).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                fbs.getFire().collection("shoes").add(rest).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(getActivity(), "Successfully added your restaurant!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Successfully added your shoes!", Toast.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e("Failure AddRestaurant: ", e.getMessage());
+                        Log.e("Failure shoes: ", e.getMessage());
                     }
                 });
 

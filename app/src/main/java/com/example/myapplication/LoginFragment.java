@@ -105,6 +105,7 @@ public class LoginFragment extends Fragment {
                 fbs.getAuth().signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
+                        gotoHomeFragment();
                         Toast.makeText(getActivity(), "Succeeded", Toast.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -129,6 +130,10 @@ public class LoginFragment extends Fragment {
                 gotoForgotFragment();
             }
         });
+    }
+
+    private void gotoHomeFragment() {
+        gotoHomeFragment();
     }
 
     private void gotoSignupFragment(){
