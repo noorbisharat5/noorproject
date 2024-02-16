@@ -7,25 +7,38 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="409dp"
-        android:layout_height="581dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogInHomeFragment"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/welcome"
-        tools:layout_editor_absoluteY="-171dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/welcome" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="350dp"
-        android:layout_height="46dp"
+        android:id="@+id/btnLogInHomeFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="75dp"
         android:text="Lets Get Started"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="411dp" />
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="355dp"
-        android:layout_height="180dp"
-        app:srcCompat="@drawable/sari"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="484dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="97dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogInHomeFragment"
+        app:srcCompat="@drawable/sari" />
 </androidx.constraintlayout.widget.ConstraintLayout>
