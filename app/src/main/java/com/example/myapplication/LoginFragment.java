@@ -133,7 +133,9 @@ public class LoginFragment extends Fragment {
     }
 
     private void gotoHomeFragment() {
-        gotoHomeFragment();
+        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frameLayoutMain, new HomeFragmentt());
+        ft.commit();
     }
 
     private void gotoSignupFragment(){
