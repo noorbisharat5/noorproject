@@ -9,9 +9,9 @@ import com.google.firebase.storage.FirebaseStorage;
 
 public class FirebaseServices {
     private static FirebaseServices instance;
-    private FirebaseAuth auth;
-    private FirebaseFirestore fire = FirebaseFirestore.getInstance();
-    private FirebaseStorage storage;
+    private final FirebaseAuth auth;
+    private FirebaseFirestore fire;
+    private final FirebaseStorage storage;
 
     public static FirebaseServices getInstance() {
         if (instance == null)
@@ -34,5 +34,6 @@ public class FirebaseServices {
     public FirebaseServices() {
         auth = FirebaseAuth.getInstance();
         storage = FirebaseStorage.getInstance();
+        fire = FirebaseFirestore.getInstance();
     }
 }

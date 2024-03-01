@@ -85,24 +85,24 @@ public class AddShoeFragment extends Fragment {
 
     private void connectComponents() {
         fbs = FirebaseServices.getInstance();
-        etName = getView().findViewById(R.id.etNameAddRestaurantFragment);
-        etDescription = getView().findViewById(R.id.etSizeAddRestaurantFragment);
-        etModel = getView().findViewById(R.id.etModelAddRestaurantFragment);
-        etPhone = getView().findViewById(R.id.etPhoneAddRestaurantFragment);
-        btnAdd = getView().findViewById(R.id.btnAddAddRestaurantFragment);
+        etName = getView().findViewById(R.id.etNameAddShoeFragment);
+        etSize = getView().findViewById(R.id.etSizeAddShoeFragment);
+        etModel = getView().findViewById(R.id.etModelAddShoeFragment);
+        etPhone = getView().findViewById(R.id.etPhoneAddShoeFragment);
+        btnAdd = getView().findViewById(R.id.btnAddAddShoeFragment);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // get data from screen
                 String name = etName.getText().toString();
-                String description = etDescription.getText().toString();
-                String address = etAddress.getText().toString();
+                String model = etModel.getText().toString();
+                String size = etSize.getText().toString();
                 String phone = etPhone.getText().toString();
 
                 // data validation
-                if (name.trim().isEmpty() || description.trim().isEmpty() ||
-                        address.trim().isEmpty() || phone.trim().isEmpty())
+                if (name.trim().isEmpty() || model.trim().isEmpty() ||
+                        size.trim().isEmpty() || phone.trim().isEmpty())
                 {
                     Toast.makeText(getActivity(), "Some fields are empty!", Toast.LENGTH_LONG).show();
                     return;

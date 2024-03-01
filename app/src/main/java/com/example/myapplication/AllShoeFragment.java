@@ -20,7 +20,7 @@ public class AllShoeFragment extends Fragment {
     private FirebaseServices fbs;
     private ArrayList<Shoe> shoeList;
     private RecyclerView rvShoe;
-    private bisharatshoesAdapter adapter;
+    private ShoeAdapter adapter;
 
 
     // TODO: Rename parameter arguments, choose names that match

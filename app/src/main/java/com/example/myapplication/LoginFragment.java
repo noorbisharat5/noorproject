@@ -105,7 +105,7 @@ public class LoginFragment extends Fragment {
                 fbs.getAuth().signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        gotoHomeFragment();
+                        gotoAddFragment();
                         Toast.makeText(getActivity(), "Succeeded", Toast.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -133,7 +133,9 @@ public class LoginFragment extends Fragment {
     }
 
     private void gotoHomeFragment() {
-        gotoHomeFragment();
+        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frameLayoutMain, new HomeFragmentt());
+        ft.commit();
     }
 
     private void gotoSignupFragment(){
@@ -145,6 +147,11 @@ public class LoginFragment extends Fragment {
     private void gotoForgotFragment(){
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frameLayoutMain, new ForgotFragment());
+        ft.commit();
+    }
+    private void gotoAddFragment(){
+        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frameLayoutMain, new AddShoeFragment());
         ft.commit();
     }
 }

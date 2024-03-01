@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 public class Shoe {
+
     private String name;
     private String size;
     private String model;

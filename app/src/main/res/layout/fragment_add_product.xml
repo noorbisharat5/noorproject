@@ -5,14 +5,14 @@
     android:id="@+id/fl1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddRestaurantFragment">
+    tools:context=".AddShoeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <EditText
-            android:id="@+id/etNameAddRestaurantFragment"
+            android:id="@+id/etNameAddShoeFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="77dp"
@@ -20,13 +20,14 @@
             android:ems="10"
             android:hint="name..."
             android:inputType="text"
-            app:layout_constraintBottom_toTopOf="@+id/etSizeAddRestaurantFragment"
+            app:layout_constraintBottom_toTopOf="@+id/etSizeAddShoeFragment"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/etSizeAddRestaurantFragment"
+            android:id="@+id/etSizeAddShoeFragment"
             android:layout_width="204dp"
             android:layout_height="0dp"
             android:layout_marginBottom="37dp"
@@ -34,36 +35,36 @@
             android:gravity="start|top"
             android:hint="size"
             android:inputType="textMultiLine"
-            app:layout_constraintBottom_toTopOf="@+id/etModelAddRestaurantFragment"
-            app:layout_constraintStart_toStartOf="@+id/etNameAddRestaurantFragment"
-            app:layout_constraintTop_toBottomOf="@+id/etNameAddRestaurantFragment" />
+            app:layout_constraintBottom_toTopOf="@+id/etModelAddShoeFragment"
+            app:layout_constraintStart_toStartOf="@+id/etNameAddShoeFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etNameAddShoeFragment" />
 
         <EditText
-            android:id="@+id/etModelAddRestaurantFragment"
+            android:id="@+id/etModelAddShoeFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             android:ems="10"
             android:hint="model"
             android:inputType="text|textPostalAddress"
-            app:layout_constraintBottom_toTopOf="@+id/etPhoneAddRestaurantFragment"
-            app:layout_constraintStart_toStartOf="@+id/etSizeAddRestaurantFragment"
-            app:layout_constraintTop_toBottomOf="@+id/etSizeAddRestaurantFragment" />
+            app:layout_constraintBottom_toTopOf="@+id/etPhoneAddShoeFragment"
+            app:layout_constraintStart_toStartOf="@+id/etSizeAddShoeFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etSizeAddShoeFragment" />
 
         <EditText
-            android:id="@+id/etPhoneAddRestaurantFragment"
+            android:id="@+id/etPhoneAddShoeFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="68dp"
             android:ems="10"
             android:hint="phone..."
             android:inputType="phone"
-            app:layout_constraintBottom_toTopOf="@+id/btnAddAddRestaurantFragment"
-            app:layout_constraintStart_toStartOf="@+id/etModelAddRestaurantFragment"
-            app:layout_constraintTop_toBottomOf="@+id/etModelAddRestaurantFragment" />
+            app:layout_constraintBottom_toTopOf="@+id/btnAddAddShoeFragment"
+            app:layout_constraintStart_toStartOf="@+id/etModelAddShoeFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etModelAddShoeFragment" />
 
         <Button
-            android:id="@+id/btnAddAddRestaurantFragment"
+            android:id="@+id/btnAddAddShoeFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="249dp"
@@ -72,6 +73,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPhoneAddRestaurantFragment" />
+            app:layout_constraintTop_toBottomOf="@+id/etPhoneAddShoeFragment" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
