@@ -16,28 +16,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="77dp"
-            android:layout_marginBottom="33dp"
+            android:layout_marginBottom="31dp"
             android:ems="10"
             android:hint="name..."
             android:inputType="text"
-            app:layout_constraintBottom_toTopOf="@+id/etSizeAddShoeFragment"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/etModelAddShoeFragment"
+            app:layout_constraintEnd_toEndOf="@+id/etPriceAddShoeFragment"
+            app:layout_constraintStart_toStartOf="@+id/etPriceAddShoeFragment"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/etSizeAddShoeFragment"
             android:layout_width="204dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="37dp"
+            android:layout_marginBottom="35dp"
             android:ems="10"
             android:gravity="start|top"
             android:hint="size"
             android:inputType="textMultiLine"
-            app:layout_constraintBottom_toTopOf="@+id/etModelAddShoeFragment"
-            app:layout_constraintStart_toStartOf="@+id/etNameAddShoeFragment"
-            app:layout_constraintTop_toBottomOf="@+id/etNameAddShoeFragment" />
+            app:layout_constraintBottom_toTopOf="@+id/ivaddfragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPriceAddShoeFragment" />
 
         <EditText
             android:id="@+id/etModelAddShoeFragment"
@@ -47,32 +47,45 @@
             android:ems="10"
             android:hint="model"
             android:inputType="text|textPostalAddress"
-            app:layout_constraintBottom_toTopOf="@+id/etPhoneAddShoeFragment"
-            app:layout_constraintStart_toStartOf="@+id/etSizeAddShoeFragment"
-            app:layout_constraintTop_toBottomOf="@+id/etSizeAddShoeFragment" />
+            app:layout_constraintBottom_toTopOf="@+id/etPriceAddShoeFragment"
+            app:layout_constraintStart_toStartOf="@+id/etNameAddShoeFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etNameAddShoeFragment" />
 
         <EditText
-            android:id="@+id/etPhoneAddShoeFragment"
+            android:id="@+id/etPriceAddShoeFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="68dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginBottom="25dp"
             android:ems="10"
-            android:hint="phone..."
+            android:hint="price..."
             android:inputType="phone"
-            app:layout_constraintBottom_toTopOf="@+id/btnAddAddShoeFragment"
-            app:layout_constraintStart_toStartOf="@+id/etModelAddShoeFragment"
+            app:layout_constraintBottom_toTopOf="@+id/etSizeAddShoeFragment"
+            app:layout_constraintStart_toStartOf="@+id/etSizeAddShoeFragment"
             app:layout_constraintTop_toBottomOf="@+id/etModelAddShoeFragment" />
 
         <Button
             android:id="@+id/btnAddAddShoeFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="249dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="84dp"
             android:text="Add"
             app:iconTint="#0C31FF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPhoneAddShoeFragment" />
+            app:layout_constraintTop_toBottomOf="@+id/ivaddfragment" />
+
+        <ImageView
+            android:id="@+id/ivaddfragment"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="19dp"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintBottom_toTopOf="@+id/btnAddAddShoeFragment"
+            app:layout_constraintEnd_toEndOf="@+id/btnAddAddShoeFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etSizeAddShoeFragment" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

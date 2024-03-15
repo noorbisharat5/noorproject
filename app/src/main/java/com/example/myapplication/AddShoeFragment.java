@@ -1,16 +1,20 @@
 package com.example.myapplication;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -25,7 +29,10 @@ import com.google.firebase.firestore.DocumentReference;
 public class AddShoeFragment extends Fragment {
 
     private FirebaseServices fbs;
-    private EditText etName, etDescription, etModel, etSize, etPhone, etAddress;
+    private static final int GALLERY_REQUEST_CODE = 123;
+    private Utils utils;
+    ImageView img;
+    private EditText etName, etPrice, etModel, etSize;
     private Button btnAdd;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -85,10 +92,13 @@ public class AddShoeFragment extends Fragment {
 
     private void connectComponents() {
         fbs = FirebaseServices.getInstance();
+        img = getView().findViewById(R.id.ivaddfragment);
+        // TODO: connect utils
+        utils = Utils.getInstance();
         etName = getView().findViewById(R.id.etNameAddShoeFragment);
         etSize = getView().findViewById(R.id.etSizeAddShoeFragment);
         etModel = getView().findViewById(R.id.etModelAddShoeFragment);
-        etPhone = getView().findViewById(R.id.etPhoneAddShoeFragment);
+        etPrice = getView().findViewById(R.id.etPriceAddShoeFragment);
         btnAdd = getView().findViewById(R.id.btnAddAddShoeFragment);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -98,20 +108,28 @@ public class AddShoeFragment extends Fragment {
                 String name = etName.getText().toString();
                 String model = etModel.getText().toString();
                 String size = etSize.getText().toString();
-                String phone = etPhone.getText().toString();
+                String price = etPrice.getText().toString();
 
                 // data validation
                 if (name.trim().isEmpty() || model.trim().isEmpty() ||
-                        size.trim().isEmpty() || phone.trim().isEmpty())
+                        size.trim().isEmpty() || price.trim().isEmpty())
                 {
                     Toast.makeText(getActivity(), "Some fields are empty!", Toast.LENGTH_LONG).show();
                     return;
                 }
 
-                // add data to firestore
-                Shoe rest = new Shoe(name, description, address, phone);
 
-                fbs.getFire().collection("shoes").add(rest).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                // add data to firestore
+                Shoe shoe;
+                if (fbs.getSelectedImageURL() == null) {
+                    shoe = new Shoe(name, size, model, price, "");
+                }
+                else
+                {
+                    shoe = new Shoe(name, size, model, price, fbs.getSelectedImageURL().toString());
+                }
+
+                fbs.getFire().collection("shoes").add(shoe).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         Toast.makeText(getActivity(), "Successfully added your shoes!", Toast.LENGTH_SHORT).show();
@@ -126,5 +144,28 @@ public class AddShoeFragment extends Fragment {
 
             }
         });
+
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGallery();
+            }
+        });
+    }
+
+    private void openGallery() {
+        Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(galleryIntent, GALLERY_REQUEST_CODE);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == GALLERY_REQUEST_CODE && resultCode == getActivity().RESULT_OK && data != null) {
+            Uri selectedImageUri = data.getData();
+            img.setImageURI(selectedImageUri);
+            utils.uploadImage(getActivity(), selectedImageUri);
+        }
     }
 }
