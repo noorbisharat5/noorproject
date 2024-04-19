@@ -2,12 +2,19 @@
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
@@ -18,7 +25,7 @@ import java.util.ArrayList;
  */
 public class AllShoeFragment extends Fragment {
     private FirebaseServices fbs;
-    private ArrayList<Shoe> shoeList;
+    private ArrayList<ShoeItem> shoeList;
     private RecyclerView rvShoe;
     //private ShoeAdapter adapter;
 
@@ -35,6 +42,39 @@ public class AllShoeFragment extends Fragment {
     public AllShoeFragment() {
         // Required empty public constructor
     }
+
+     public ArrayList<ShoeItem> getShoes()
+     {
+         ArrayList<ShoeItem> shoes = new ArrayList<>();
+
+         try {
+             shoes.clear();
+             fbs.getFire().collection("shoes")
+                     .get()
+                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                         @Override
+                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                             if (task.isSuccessful()) {
+                                 for (QueryDocumentSnapshot document : task.getResult()) {
+                                     shoes.add(document.toObject(ShoeItem.class));
+                                 }
+
+                                 //ShoeListAdapter2 adapter = new ShoeItem()ListAdapter2(getActivity(), cars);
+                                 //recyclerView.setAdapter(adapter);
+                                 //addUserToCompany(companies, user);
+                             } else {
+                                 //Log.e("AllRestActivity: readData()", "Error getting documents.", task.getException());
+                             }
+                         }
+                     });
+         }
+         catch (Exception e)
+         {
+             Log.e("getShoes(): ", e.getMessage());
+         }
+
+         return shoes;
+     }
 
     /**
      * Use this factory method to create a new instance of

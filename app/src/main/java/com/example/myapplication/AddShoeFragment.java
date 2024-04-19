@@ -120,13 +120,13 @@ public class AddShoeFragment extends Fragment {
 
 
                 // add data to firestore
-                Shoe shoe;
+                ShoeItem shoe;
                 if (fbs.getSelectedImageURL() == null) {
-                    shoe = new Shoe(name, size, model, price, "");
+                    shoe = new ShoeItem(name, size, model, price, "");
                 }
                 else
                 {
-                    shoe = new Shoe(name, size, model, price, fbs.getSelectedImageURL().toString());
+                    shoe = new ShoeItem(name, size, model, price, fbs.getSelectedImageURL().toString());
                 }
 
                 fbs.getFire().collection("shoes").add(shoe).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

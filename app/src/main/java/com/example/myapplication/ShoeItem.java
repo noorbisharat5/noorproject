@@ -1,6 +1,6 @@
 package com.example.myapplication;
 
-public class Shoe {
+public class ShoeItem {
 
     private String name;
     private String size;
@@ -8,7 +8,7 @@ public class Shoe {
     private String price;
     private String photo;
 
-    public Shoe(String name, String size, String model, String price, String photo) {
+    public ShoeItem(String name, String size, String model, String price, String photo) {
         this.name = name;
         this.size = size;
         this.model = model;
@@ -16,7 +16,7 @@ public class Shoe {
         this.photo = photo;
     }
 
-    public Shoe() {
+    public ShoeItem() {
     }
 
     public String getName() {

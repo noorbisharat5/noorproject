@@ -27,7 +27,7 @@
                     android:id="@+id/ivProfileCarListMapFragment"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/ic_profile"
+                    android:src="@drawable/logo"
                     android:layout_gravity="end" />
             </LinearLayout>
 
