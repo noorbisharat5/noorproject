@@ -55,14 +55,13 @@ public class ShoeAdapter extends RecyclerView.Adapter<ShoeAdapter.MyViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull shoesListAdapter.MyViewHolder holder, int position){
+    public void onBindViewHolder(@NonNull CarListAdapter2.MyViewHolder holder, int position){
         ShoeItem car= shoesList.get(position);
 
-        holder.ShoeName.setText(car.getNameShoe());
-        holder.Price.setText(Shoe.getPrice() + " ₪");
-        holder.location.setText(car.getHorse_power() + " Hp");
-        holder.kilometre.setText(car.getKilometre() + " Km");
-        holder.carName.setOnClickListener(v -> {
+        holder.carName.setText(car.getNameShoe());
+        holder.Price.setText(car.getPrice() + " ₪");
+        holder.Year.setText(car.getYear());
+        holder.Shoe.setOnClickListener(v -> {
             if (itemClickListener != null) {
                 itemClickListener.onItemClick(position);
             }
